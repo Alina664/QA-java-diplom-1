@@ -31,21 +31,21 @@ public class BurgerTest {
     +"Price: %f%n",bunName,ingredientType.toString().toLowerCase(),ingredientName,bunName,ingredientPrice + bunPrice*2);
 
     @Test
-    public void setBuns() {
+    public void checkAddBunInBurger() {
         Bun bun = new Bun(bunName, bunPrice);
         burger.setBuns(bun);
         Assert.assertNotNull("Проверяем, что булка добавлена в бургер",burger.bun.getName());
     }
 
     @Test
-    public void addIngredient() {
+    public void checkAddIngredientInBurger() {
         int firstSize = burger.ingredients.size();
         burger.addIngredient(ingredient);
         Assert.assertEquals("Проверяем, что количество ингредиентов увеличилось",firstSize + 1,burger.ingredients.size());
     }
 
     @Test
-    public void removeIngredient() {
+    public void checkRemoveIngredient() {
         burger.addIngredient(ingredient);
         burger.addIngredient(ingredient);
         int firstSize = burger.ingredients.size();
@@ -54,7 +54,7 @@ public class BurgerTest {
     }
 
     @Test
-    public void moveIngredient() {
+    public void checkMoveIngredient() {
         burger.addIngredient(ingredient);
         burger.addIngredient(ingredientCopy);
         burger.moveIngredient(1,0);
@@ -62,7 +62,7 @@ public class BurgerTest {
     }
 
     @Test
-    public void getBunPrice() {
+    public void checkBunPrice() {
         burger.setBuns(bun);
         Mockito.when(bun.getPrice()).thenReturn(bunPrice);
         Assert.assertEquals("Проверяем, что цена булки посчитана верно",bunPrice*2, burger.getPrice(), 0f);
@@ -70,7 +70,7 @@ public class BurgerTest {
 
 
     @Test
-    public void getBunAndIngredientPrice() {
+    public void checkBunAndIngredientPrice() {
         burger.addIngredient(ingredient);
         burger.setBuns(bun);
         Mockito.when(bun.getPrice()).thenReturn(bunPrice);
@@ -79,7 +79,7 @@ public class BurgerTest {
     }
 
     @Test
-    public void getReceipt() {
+    public void checkReceiptAndPriseValid() {
         burger.addIngredient(ingredient);
         burger.setBuns(bun);
         Mockito.when(bun.getPrice()).thenReturn(bunPrice);

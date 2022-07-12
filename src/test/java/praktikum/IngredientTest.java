@@ -18,22 +18,22 @@ public class IngredientTest {
     private final Ingredient ingredientSauce = new Ingredient(typeSauce, "Кетчуп", 99);
 
     @Test
-    public void getPriceIngredient() {
+    public void checkPriceIngredient() {
         Assert.assertEquals("Сравниваем полученную и объявленную цену",price, ingredientFilling.getPrice(),0f);
     }
 
     @Test
-    public void getNameIngredient() {
+    public void checkNameIngredient() {
         Assert.assertEquals("Сравниваем наименование ингредиентов",nameFilling, ingredientFilling.getName());
     }
 
     @Test
-    public void getTypeIngredientFilling() {
+    public void checkTypeIngredientFilling() {
         Assert.assertEquals("Сравниваем тип ингредиента: Начинка", typeFilling, ingredientFilling.getType());
     }
 
     @Test
-    public void getTypeIngredientSauce() {
+    public void checkTypeIngredientSauce() {
         Assert.assertEquals("Сравниваем тип ингредиента: Соус", typeSauce, ingredientSauce.getType());
     }
 

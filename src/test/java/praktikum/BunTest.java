@@ -1,6 +1,5 @@
 package praktikum;
 
-import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,12 +11,12 @@ public class BunTest{
     private final Bun bun = new Bun(name, price);
 
     @Test
-    public void getNameBun() {
+    public void checkNameBun() {
         Assert.assertEquals("Сравниваем наименование булок",name, bun.getName());
     }
 
     @Test
-    public void getPrice() {
+    public void checkPrice() {
         Assert.assertEquals("Сравниваем полученную и объявленную цену",price, bun.getPrice(),0f);
     }
 }
